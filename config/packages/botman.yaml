@@ -1,0 +1,5 @@
+botman:
+    drivers:
+        telegram:
+            parameters:
+                token: '%env(TELEGRAM_BOT_API)%'
