@@ -6,6 +6,7 @@ A Symfony bundle for [BotMan](https://botman.io/), a PHP chatbot framework.
  
 ## Drivers supported
 
+* [Facebook](https://botman.io/2.0/driver-facebook-messenger)
 * [Telegram](https://botman.io/2.0/driver-telegram)
 
 ## How to install
@@ -29,8 +30,39 @@ A Symfony bundle for [BotMan](https://botman.io/), a PHP chatbot framework.
     
     Change `your.serveo.net` with the hostname that _Serveo_ assigned to you. 
 
+1. Copy config template:
 
-### Configure Telegram client
+        cp config/packages/botman.yaml.dist config/packages/botman.yaml
+
+## Configuring drivers
+
+### Configure Facebook driver
+
+1. Uncomment _Facebook Messenger_ driver section in `config/packages/botman.yaml` file.
+
+1. Edit `.env` file and fill only this variables:
+    
+    ```dotenv
+    FACEBOOK_TOKEN=your-facebook-page-token
+    FACEBOOK_VERIFICATION=your-facebook-verification-token
+    FACEBOOK_APP_SECRET=your-facebook-app-secret
+    ```
+    
+    If you want to know how to obtain them read the [official BotMan documentation](https://botman.io/2.0/driver-facebook-messenger).
+
+1. Configure the next webhook in the Facebook Developer bot dashboard:
+
+        https://your.serveo.net/botman
+
+1. Optionally you can configure a greeting message:
+
+    ```
+    bin/console botman:facebook:greeting
+    ```
+
+### Configure Telegram driver
+
+1. Uncomment _Telegram_ driver section in `config/packages/botman.yaml` file.
 
 1. Edit `.env` file and fill only this variables:
     
@@ -58,6 +90,8 @@ A Symfony bundle for [BotMan](https://botman.io/), a PHP chatbot framework.
     ```
     
     Remember to update your _.env_ and _webhook_ configuration every time your _Serveo_ hostname changes.
+
+## Start project
     
 1. Run symfony server
 
