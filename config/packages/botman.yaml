@@ -1,5 +1,21 @@
 botman:
     drivers:
-        telegram:
-            parameters:
-                token: '%env(TELEGRAM_BOT_API)%'
+
+# Uncomment this to enable Telegram bot driver
+# Remember configure options in .env file
+#        telegram:
+#            parameters:
+#                token: '%env(TELEGRAM_BOT_API)%'
+
+
+
+# Uncomment this to enable Facebook Messenger driver
+# Remember configure options in .env file
+#        facebook:
+#            parameters:
+#                token: '%env(FACEBOOK_TOKEN)%'
+#                verification: '%env(FACEBOOK_VERIFICATION)%'
+#                app_secret: '%env(FACEBOOK_APP_SECRET)%'
+#                greeting:
+#                    - { locale: 'default', text: 'Welcome' }
+#                    - { locale: 'es_ES', text: 'Bienvenido' }

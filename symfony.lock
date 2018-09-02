@@ -2,6 +2,9 @@
     "botman/botman": {
         "version": "2.4.1"
     },
+    "botman/driver-facebook": {
+        "version": "1.9.2"
+    },
     "botman/driver-telegram": {
         "version": "1.5.2"
     },
